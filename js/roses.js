@@ -1,4 +1,3 @@
-
 //Rafael Kollyfas - 2020
 // three.js global variables
 var scene,
