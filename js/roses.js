@@ -16,6 +16,7 @@ var cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 var sphereGeometry = new THREE.SphereGeometry(1, 32,80);
 
 var radius = 50; // Planet radius
+// scene.background = new THREE.Color( 0xff0000 );
 
 
 
@@ -33,7 +34,7 @@ function getRoses() {
 
 // Generate a planet at (0,0,0) with specified radius
 function planet(r) {
-  var groundMaterial = new THREE.MeshLambertMaterial({ color: 0x151515});
+  var groundMaterial = new THREE.MeshLambertMaterial({ color: 0x050505});
   var planetGeometry = new THREE.SphereGeometry(r, 100, 100); 
   var planet = new THREE.Mesh(planetGeometry, groundMaterial);
   planet.position.set(0,0,0);
@@ -124,7 +125,9 @@ function init() {
 function render() {
     requestAnimationFrame( render );
     controls.update();
+    renderer.setClearColor( 0x181418 );
     renderer.render( scene, camera );
+    // renderer.setClearColor( 0xffffff, 0);
 }
 
 init();
