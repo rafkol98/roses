@@ -46,9 +46,9 @@ function rose(angles) {
     stem.position.set(0, radius + 0.75, 0 );
     stem.scale.set( 0.3, 1.5, 0.3 );
 
-    var roseDark = new THREE.Mesh(sphereGeometry, roseDarkMaterial );
-    roseDark.position.set( 0, radius + 1.4, 0 );
-    roseDark.scale.set( 0.8, 0.2, 0.8 );
+    // var roseDark = new THREE.Mesh(sphereGeometry, roseDarkMaterial );
+    // roseDark.position.set( 0, radius + 1.4, 0 );
+    // roseDark.scale.set( 0.8, 0.2, 0.8 );
 
     var topRose = new THREE.Mesh(sphereGeometry, roseDarkMaterial );
     topRose.position.set( 0, radius + 1.2, 0 );
@@ -60,7 +60,7 @@ function rose(angles) {
 
 
     var rose = new THREE.Group();
-    rose.add( roseDark );
+    // rose.add( roseDark );
     rose.add(topRose);
     rose.add(topRose2);
     rose.add( stem );
