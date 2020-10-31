@@ -10,6 +10,11 @@ canvas {
   height: 100%;
 }
 
+a{
+  color: #FF3B3B;
+  text-decoration: none;
+}
+
 #logo {
   position: fixed;
   bottom: 10%;
@@ -30,13 +35,13 @@ canvas {
     color: #f5f5f5;
 
   }
-  #soulsWeLose {
-    position: fixed;
-    bottom: 5%;
+  .text {
+    /* position: fixed;
+    bottom: 7%;
     right: 50%;
-    transform: translate(50%, 0);
+    transform: translate(50%, 0); */
 
- 
+    text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 700;
@@ -44,9 +49,26 @@ canvas {
 
   }
 
+  .text-bottom {
+    position: fixed;
+    bottom: 0%;
+    right: 50%;
+    transform: translate(50%, 0);
+
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #f5f5f5;
+
+  }
+
   @media screen and (max-width: 600px) {
-    #souls{font-size: 22px;}
-    #soulsWeLose {
+    #souls{font-size: 30px;}
+    .text{
       font-size: 16px;
+    }
+    .text-bottom {
+      font-size: 20px;
     }
   }
