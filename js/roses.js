@@ -97,7 +97,6 @@ function growroses(n) {
 function init() {
     // Update rose count regularly
     getRoses()
-    setInterval(getRoses, 30000)
 
     // Set up scene + renderer
     scene = new THREE.Scene();
