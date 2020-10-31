@@ -34,7 +34,7 @@ function getRoses() {
 
 // Generate a planet at (0,0,0) with specified radius
 function planet(r) {
-  var groundMaterial = new THREE.MeshLambertMaterial({ color: 0x050505});
+  var groundMaterial = new THREE.MeshLambertMaterial({ color: 0x070707});
   var planetGeometry = new THREE.SphereGeometry(r, 100, 100); 
   var planet = new THREE.Mesh(planetGeometry, groundMaterial);
   planet.position.set(0,0,0);
