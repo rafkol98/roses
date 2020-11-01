@@ -31,9 +31,9 @@ a{
 }
 
 #remembering {
-    width: 80%;
+    /* width: 80%; */
     position: fixed;
-    top: 7%; 
+    top: 4%; 
     right: 50%;
     transform: translate(50%,-50%);
     text-align: center;
@@ -59,7 +59,7 @@ a{
 
   .text-bottom {
     position: fixed;
-    bottom: 1%;
+    bottom: 4%;
     right: 50%;
     transform: translate(50%, 0);
 
@@ -71,7 +71,7 @@ a{
 
   }
 
-  #souls{
+  .red{
     color: #FF3B3B;
   }
 
@@ -90,6 +90,11 @@ a{
 
   }
 
+  #involved{
+    font-size: 24px;
+    color: #FF3B3B;
+  }
+
   @media screen and (max-width: 600px) {
     #souls{font-size: 30px;}
     .text{
@@ -97,7 +102,7 @@ a{
       font-size: 16px;
     }
     .text-bottom {
-      bottom: 5%;
+      bottom: 10%;
       font-size: 20px;
     }
   }
