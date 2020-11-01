@@ -87,8 +87,9 @@ function numberWithCommas(x) {
 
 // Add n roses to scene randomly
 function growroses(n) {
-  $("#souls").text("WE LOST "+numberWithCommas(n*10000)+" SOULS")
-  $("#soulsWeLose").text("a rose appears for every 10,000 souls we lose in this fight.")
+  $("#remembering").text("REMEMBERING JOHN D.")
+  $("#souls").text(numberWithCommas((n*10000)-1));
+  // $("#soulsWeLose").text("a rose appears for every 10,000 souls we lose in this fight.")
   for (var i = 0; i < n; i++) {
     scene.add(rose(randomAngleTriple()))
   }
@@ -103,7 +104,7 @@ function init() {
     camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 80
 
-    renderer =  new THREE.WebGLRenderer();
+    renderer =  new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize( window.innerWidth, window.innerHeight );
     document.body.appendChild( renderer.domElement );
 
@@ -125,7 +126,8 @@ function init() {
 function render() {
     requestAnimationFrame( render );
     controls.update();
-    renderer.setClearColor( 0x181418 );
+    // 181418
+    renderer.setClearColor( 0x423242,0 );
     renderer.render( scene, camera );
     // renderer.setClearColor( 0xffffff, 0);
 }
