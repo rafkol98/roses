@@ -16,11 +16,10 @@ var cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 var sphereGeometry = new THREE.SphereGeometry(1, 32,80);
 
 var radius = 50; // Planet radius
-// scene.background = new THREE.Color( 0xff0000 );
 
 
 
-// Retrieve roses from wrapapi, update text + grow roses when appropriate
+// Retrieve how many people died, grow appropriate roses
 function getRoses() {
   
   fetch('https://coronavirus-19-api.herokuapp.com/all').then(res => res.json()).then(

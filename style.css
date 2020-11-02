@@ -1,17 +1,18 @@
+
 html{
   min-height: 100%;
   position:relative;
-  
+  overscroll-behavior: none;
 }
 
 body {
   margin: 0px;
   padding: 0px;
   overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
   background: rgb(66,50,66);
   background: linear-gradient(0deg, rgba(66,50,66,1) 0%, rgba(29,29,29,1) 100%);
-  
+  overscroll-behavior: none;
 }
 
 .involved{
@@ -41,7 +42,7 @@ a{
     right: 50%;
     transform: translate(50%,-50%);
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
     font-size: 35px;
     font-weight: 700;
     color: #f5f5f5;
@@ -49,7 +50,7 @@ a{
   }
   .text {
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: 700;
     color: #f5f5f5;
@@ -63,7 +64,7 @@ a{
     transform: translate(50%, 0);
 
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
     font-size: 30px;
     font-weight: 700;
     color: #f5f5f5;
@@ -76,7 +77,7 @@ a{
 
   .by{
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
     font-size: 15px;
     font-weight: 700;
     color: #f5f5f5;
@@ -89,8 +90,8 @@ a{
     right: 50%;
     transform: translate(50%, 0);
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
+    font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
+    font-weight: bolder;
     font-size: 32px;
     color: #FF3B3B;
   }
@@ -147,4 +148,18 @@ a{
   /* Add a hover effect for buttons */
   button:hover {
     opacity: 0.9;
+  }
+
+
+  .center { 
+    text-align: center;
+  }
+
+  .person {
+    font-size: 50px;
+    font-weight: bold;
+  }
+
+  #farewell {
+    font-style: italic;
   }
