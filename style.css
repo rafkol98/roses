@@ -116,6 +116,12 @@ a{
       bottom: 7%;
       font-size: 20px;
     }
+    #involved{
+      font-size: 20px;
+    }
+    .by{
+      font-size: 11px;
+    }
   }
 
 
