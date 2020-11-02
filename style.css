@@ -122,6 +122,10 @@ a{
     .by{
       font-size: 11px;
     }
+    .container{
+      font-size: smaller;
+      width: 94%;
+    }
   }
 
 
