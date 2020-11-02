@@ -88,7 +88,7 @@ function numberWithCommas(x) {
 function growroses(n) {
   $("#name").text("JOHN D.")
   $("#souls").text(numberWithCommas((n*10000)-1));
-  // $("#soulsWeLose").text("a rose appears for every 10,000 souls we lose in this fight.")
+
   for (var i = 0; i < n; i++) {
     scene.add(rose(randomAngleTriple()))
   }
@@ -125,10 +125,8 @@ function init() {
 function render() {
     requestAnimationFrame( render );
     controls.update();
-    // 181418
     renderer.setClearColor( 0x423242,0 );
     renderer.render( scene, camera );
-    // renderer.setClearColor( 0xffffff, 0);
 }
 
 init();
