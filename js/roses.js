@@ -10,12 +10,12 @@ var scene,
 
 // Rose materials
 var roseDarkMaterial = new THREE.MeshLambertMaterial({ color: 0xFF3B3B });
-var stemMaterial = new THREE.MeshLambertMaterial({ color: 0x002607 });
+var stemMaterial = new THREE.MeshLambertMaterial({ color: 0x60ff90 });
 var cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 
 var sphereGeometry = new THREE.SphereGeometry(1, 32,80);
 
-var radius = 50; // Planet radius
+var radius = 35; // Planet radius
 
 
 
@@ -33,7 +33,7 @@ function getRoses() {
 
 // Generate a planet at (0,0,0) with specified radius
 function planet(r) {
-  var groundMaterial = new THREE.MeshLambertMaterial({ color: 0x070707});
+  var groundMaterial = new THREE.MeshLambertMaterial({ color: 0x101010});
   var planetGeometry = new THREE.SphereGeometry(r, 100, 100); 
   var planet = new THREE.Mesh(planetGeometry, groundMaterial);
   planet.position.set(0,0,0);
@@ -86,7 +86,7 @@ function numberWithCommas(x) {
 
 // Add n roses to scene randomly
 function growroses(n) {
-  $("#name").text("JOHN D.")
+  $("#name").text("JOHN")
   $("#souls").text(numberWithCommas((n*10000)-1));
 
   for (var i = 0; i < n; i++) {
@@ -101,7 +101,7 @@ function init() {
     // Set up scene + renderer
     scene = new THREE.Scene();
     camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-    camera.position.z = 80
+    camera.position.z = 60;
 
     renderer =  new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -110,7 +110,7 @@ function init() {
     // Create lights, add lights to scene
     var light1 = new THREE.DirectionalLight( 0xDDEED3, 1 );
     var light2 = new THREE.AmbientLight(0x7D7D7D);
-    light1.position.set( 0, 0, 1 );
+    light1.position.set( 0, -1, 1 );
 
     scene.add(light1);
     scene.add(light2);
