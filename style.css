@@ -12,7 +12,7 @@ body {
   overflow: hidden;
   font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
   background: rgb(66,50,66);
-  background: linear-gradient(40deg, rgb(130, 85, 90) 0%, rgba(29,29,44,1) 100%);
+  background: linear-gradient(40deg, rgb(130, 85, 90) 0%, rgb(40, 40, 79) 100%);
   overscroll-behavior: none;
   
 }
@@ -40,7 +40,7 @@ a{
 
 #remembering {
     position: fixed;
-    top: 4%; 
+    top: 2%; 
     right: 50%;
     transform: translate(50%,-50%);
     text-align: center;
@@ -50,6 +50,19 @@ a{
     color: #ffffff;
 
   }
+
+#character {
+    position: fixed;
+    top: 9%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    text-align: center;
+    font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
   .text {
     text-align: center;
     font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
@@ -117,7 +130,7 @@ a{
     }
     .text-bottom {
       bottom: 7%;
-      font-size: 20px;
+      font-size: 18px;
     }
     #involved{
       font-size: 20px;
@@ -128,6 +141,13 @@ a{
     .container{
       font-size: smaller;
       width: 94%;
+    }
+    #remembering {
+      font-size: 24px;
+    }
+    #character {
+      top: 8%;
+      font-size: 18px;
     }
   }
 

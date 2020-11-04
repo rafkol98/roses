@@ -86,7 +86,8 @@ function numberWithCommas(x) {
 
 // Add n roses to scene randomly
 function growroses(n) {
-  $("#name").text("JOHN")
+  $("#name").text("JOHN");
+  $("#character").text("KIND, FUNNY, SWEET");
   $("#souls").text(numberWithCommas((n*10000)-1));
 
   for (var i = 0; i < n; i++) {
