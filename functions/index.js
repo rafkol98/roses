@@ -22,27 +22,32 @@ exports.sayHello = functions.https.onCall((data,context)=>{
 exports.writeName = functions.https.onCall((data, context) => {
    
         const name = data.name;
-        const threeWords = data.threeWords;
+        const wordOne = data.wordOne.toUpperCase();
+        const wordTwo = data.wordTwo.toUpperCase();
+        const wordThree = data.wordThree.toUpperCase();
+       
         const namesRef = admin.database().ref('names');
 
+       
         var currentTimestamp = new Date().getTime();
 
         if(name.length<=25){
     
             console.log(name+" is all letters and under 25 characters");
 
-            if(threeWords.length<=60){
+            if(wordOne.length<=20 && wordTwo.length<=20 && wordThree.length<=20){
+                var threeWords = wordOne+", "+wordTwo+", "+wordThree;
                 console.log(threeWords+" is under 60 characters");
                 //WRITE TO DATABASE.
                 namesRef.child(currentTimestamp).child("name").set(name);
                 namesRef.child(currentTimestamp).child("threeWords").set(threeWords);
                
             } else{
-                console.log(threeWords+" is more than 60 characters"); 
+                console.log("One of the 3 words is more than 20 characters."); 
             }
 
         } else {
-            console.log(name+" contains characters that are not all letters.");
+            console.log(name+" contains more than 25 characters.");
         }
 
   
