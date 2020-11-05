@@ -83,11 +83,19 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-
 // Add n roses to scene randomly
 function growroses(n) {
-  $("#name").text("JOHN");
-  $("#character").text("KIND, FUNNY, SWEET");
+
+  const returnName = firebase.functions().httpsCallable('returnName');
+  returnName().then(result => {
+      console.log(result.data);
+      $("#name").text(result.data.name.toUpperCase());
+      $("#character").text(result.data.threeWords);
+
+  });
+
+  $("#name").text();
+  
   $("#souls").text(numberWithCommas((n*10000)-1));
 
   for (var i = 0; i < n; i++) {

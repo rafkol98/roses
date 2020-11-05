@@ -45,7 +45,7 @@ a{
     transform: translate(50%,-50%);
     text-align: center;
     font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 700;
     color: #ffffff;
 
@@ -125,7 +125,6 @@ a{
   @media screen and (max-width: 600px) {
     #souls{font-size: 30px;}
     .text{
-      
       font-size: 16px;
     }
     .text-bottom {
@@ -143,7 +142,7 @@ a{
       width: 94%;
     }
     #remembering {
-      font-size: 24px;
+      font-size: 20px;
     }
     #character {
       top: 8%;
