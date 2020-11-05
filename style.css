@@ -123,7 +123,7 @@ a{
   }
 
   @media screen and (max-width: 600px) {
-    #souls{font-size: 30px;}
+    #souls{font-size: 20px;}
     .text{
       font-size: 16px;
     }
