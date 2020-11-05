@@ -142,11 +142,12 @@ a{
       width: 94%;
     }
     #remembering {
-      font-size: 18px;
+      top: 4%;
+      font-size: 20px;
       width: 100%;
     }
     #character {
-      top: 6%;
+      top: 8%;
       font-size: 14px;
       width: 100%;
     }
