@@ -123,7 +123,7 @@ a{
   }
 
   @media screen and (max-width: 600px) {
-    #souls{font-size: 20px;}
+    #souls{font-size: 22px;}
     .text{
       font-size: 16px;
     }
@@ -142,7 +142,7 @@ a{
       width: 94%;
     }
     #remembering {
-      font-size: 16px;
+      font-size: 18px;
       width: 100%;
     }
     #character {

@@ -15,7 +15,7 @@ var cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
 
 var sphereGeometry = new THREE.SphereGeometry(1, 32,80);
 
-var radius = 35; // Planet radius
+var radius = 30 // Planet radius
 
 
 
