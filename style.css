@@ -143,10 +143,12 @@ a{
     }
     #remembering {
       font-size: 20px;
+      width: 100%;
     }
     #character {
       top: 8%;
       font-size: 18px;
+      width: 100%;
     }
   }
 
