@@ -42,9 +42,20 @@
         </script>
 
         <script>
-            function redirect() {
-            //window.open(pathString, target);
+            function redirectDonations() {
             window.open("https://covid19responsefund.org/en/", "_blank");
+            };
+
+            function redirectSupport() {
+                window.open("https://www.mhe-sme.org/library/helplines/", "_blank");
+            };
+
+            function redirectSupport2() {
+                window.open("https://www.cdc.gov/coronavirus/2019-ncov/daily-life-coping/managing-stress-anxiety.html", "_blank");
+            };
+
+            function redirectSupport3() {
+                window.open("https://helpline.barnardos.org.uk/", "_blank");
             };
         </script>
     </head>
@@ -81,11 +92,25 @@
             <button id="addBtn">SUBMIT</button>
             <hr>
 
-
             <h3>Fundraisers for COVID-19 relief</h3>
             <p>The world has never faced a crisis like COVID-19. The pandemic is impacting communities everywhere. It’s never been more urgent to support the global response, led by the World Health Organization (WHO).<br><br> Each donation helps to track and understand the spread of the virus, to ensure patients get the care they need and frontline workers get essential supplies and information. Furthermore donations help to accelerate research and development of a vaccine and treatments for all who need them.</p>
 
-            <button onclick="redirect()">DONATE</button>
+            <button onclick="redirectDonations()">DONATE</button>
+
+            <hr>
+
+            <h3>COVID-19 support line</h3>
+            <p>EUROPE - Mental Health Europe (MHE) created a map of helplines and services to support your mental health during COVID-19 crisis. Information was gathered with the valuable support of MHE members in 23 European countries. In a few clicks, the interactive map will help you find more details on helplines or services providing mental health support during COVID-19 in your country.<br><br>
+            USA - The CDC has collected a number of resources to help during these difficult times.<br><br>
+            BOLOH - BOLOH encourages Black, Asian and Minority Ethnic children, young people and families affected by Covid-19 to speak to them about their worries, their problems and their stresses during this time.
+            </p>
+
+            <div class="row">
+                <div class="col"><button onclick="redirectSupport()">MHE SUPPORT LINES</button></div>
+                <div class="col"><button onclick="redirectSupport2()">USA SUPPORT LINES</button></div>
+                <div class="col"><button onclick="redirectSupport3()">BOLOH SUPPORT LINES</button></div>
+            </div>  
+
             <hr>
             <h4>A few words from the creator</h4>
             <p>Hey, thanks for coming by. I felt the need to create something that will strengthen our unity and also remind us of our loved ones we lost during these difficult times.
