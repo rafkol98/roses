@@ -9,14 +9,14 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-        
+
 
         <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
         <!-- The core Firebase JS SDK is always required and must be listed first -->
         <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 
         <!-- TODO: Add SDKs for Firebase products that you want to use
-                 https://firebase.google.com/docs/web/setup#available-libraries -->
+                         https://firebase.google.com/docs/web/setup#available-libraries -->
         <!-- Add Firebase products that you want to use -->
         <script src="https://www.gstatic.com/firebasejs/6.1.1/firebase-auth.js"></script>
 
@@ -40,11 +40,19 @@
             firebase.initializeApp(firebaseConfig);
             // firebase.analytics();
         </script>
+
+        <script>
+            function redirect() {
+            //window.open(pathString, target);
+            window.open("https://covid19responsefund.org/en/", "_blank");
+            };
+        </script>
     </head>
     <body class="involved">
         <div class="container">
             <h3>Did you lose a loved one from COVID-19?</h3>
-            <p>If you have lost someone from COVID-19 and you want to share a bit of their memory with us you can through this form. Your loved one will be appearing in the home page at random times once you complete this form. This is a very sensitive topic, PLEASE be respectful. </p>
+            <p>If you have lost someone from COVID-19 and you want to share a bit of their memory with us you can through this form. Your loved one will be appearing in the home page at random times once you complete this form. This is a very sensitive topic, PLEASE be respectful.
+            </p>
             <form id="form" method="GET">
                 <div class="form-group">
                     <label for="name">Their first name?</label>
@@ -55,47 +63,63 @@
                     <label for="threeWords">Please write three words about them (E.g. KIND, NICE, FUNNY)</label>
                     <div class="form-row">
                         <div class="col">
-                          <input type="text" class="form-control" id="wordOne" placeholder="Word 1...">
+                            <input type="text" class="form-control" id="wordOne" placeholder="Word 1...">
                         </div>
                         <div class="col">
-                          <input type="text" class="form-control" id="wordTwo" placeholder="Word 2...">
+                            <input type="text" class="form-control" id="wordTwo" placeholder="Word 2...">
                         </div>
                         <div class="col">
                             <input type="text" class="form-control" id="wordThree" placeholder="Word 3...">
-                          </div>
-                      </div>
-                    
+                        </div>
+                    </div>
+
                     <!-- <input type="text" class="form-control" id="threeWords" aria-describedby="emailHelp"> -->
                 </div>
 
-               
 
-               
-        </form>
-        <button id="addBtn">SUBMIT</button>
-        <hr>
+            </form>
+            <button id="addBtn">SUBMIT</button>
+            <hr>
 
-   
 
-        <h3>Fundraisers for COVID-19 relief</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At corrupti, adipisci fugiat provident laboriosam perspiciatis? Dolorem atque ea facilis? Consequatur, dolorum aliquam! Velit molestias repudiandae earum quis ullam laboriosam. Excepturi.</p>
+            <h3>Fundraisers for COVID-19 relief</h3>
+            <p>The world has never faced a crisis like COVID-19. The pandemic is impacting communities everywhere. It’s never been more urgent to support the global response, led by the World Health Organization (WHO).<br><br> Each donation helps to track and understand the spread of the virus, to ensure patients get the care they need and frontline workers get essential supplies and information. Furthermore donations help to accelerate research and development of a vaccine and treatments for all who need them.</p>
 
-        <button>DONATE</button>
-        <hr>
-        <h4>A few words from the creator</h4>
-        <p>Hey, thanks for coming by. I felt the need to create something that will strengthen our unity and also remind us of our loved ones we lost during these difficult times.
-                     If you like what I did and want to buy me a coffee, I would be extremely grateful.
-        </p>
+            <button onclick="redirect()">DONATE</button>
+            <hr>
+            <h4>A few words from the creator</h4>
+            <p>Hey, thanks for coming by. I felt the need to create something that will strengthen our unity and also remind us of our loved ones we lost during these difficult times.
 
-        <a href="https://www.buymeacoffee.com/rafaelkoll" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important; position: relative; display: block; margin-left: auto; margin-right: auto; width: 50%;"></a>
-        <hr>
-        <h6>Rafael Kollyfas - 2020</h6>
+            </p>
+
+            <div id="accordion">
+                <div class="">
+                    <div class="" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                SUPPORT
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            If you like what I did and want to buy me a coffee, I would be extremely grateful.
+                            <br><br>
+                            <a href="https://www.buymeacoffee.com/rafaelkoll" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-red.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important; position: relative; display: block; margin-left: auto; margin-right: auto; width: 50%;"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr>
+            <h6>Rafael Kollyfas - 2020</h6>
         </div>
-
-        
 
 
         <script src="./js/validation.js"></script>
+        
 
     </body>
 </html>

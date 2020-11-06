@@ -90,6 +90,8 @@ a{
     color: #FF3B3B;
   }
 
+
+
   .by{
     text-align: center;
     font-family: 'Ubuntu',Arial, Helvetica, sans-serif;
@@ -154,6 +156,7 @@ a{
   }
 
 
+
   button {
     background-color: rgb(245, 69, 69);
     color: white;
@@ -184,6 +187,8 @@ a{
     font-weight: bold;
   }
 
-  #farewell {
-    font-style: italic;
+ 
+
+  #accordion{
+    background-color: rgb(242, 242, 242);
   }
