@@ -192,3 +192,25 @@ a{
   #accordion{
     background-color: rgb(242, 242, 242);
   }
+
+  .loader, .loader2 {
+    overflow: hidden !important;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background: rgb(19, 18, 28) no-repeat center center fixed;
+    background: linear-gradient(40deg, rgb(130, 85, 90) 0%, rgb(40, 40, 79) 100%) no-repeat center center fixed;            
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+}

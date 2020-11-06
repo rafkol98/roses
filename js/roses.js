@@ -91,7 +91,7 @@ function growroses(n) {
       console.log(result.data);
       $("#name").text(result.data.name.toUpperCase());
       $("#character").text(result.data.threeWords);
-
+      jQuery(".loader2").fadeOut("slow");
   });
 
   $("#name").text();
