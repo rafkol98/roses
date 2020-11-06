@@ -140,6 +140,8 @@ a{
       font-size: 11px;
     }
     .container{
+      padding: 20px;
+      padding-top: 30px;
       font-size: smaller;
       width: 94%;
     }
