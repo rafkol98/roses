@@ -40,6 +40,7 @@ exports.writeName = functions.https.onCall((data, context) => {
                 //WRITE TO DATABASE.
                 namesRef.child(currentTimestamp).child("name").set(name);
                 namesRef.child(currentTimestamp).child("threeWords").set(threeWords);
+                namesRef.child(currentTimestamp).child("final").set(false);
                
             } else{
                 console.log("One of the 3 words is more than 20 characters."); 
@@ -51,8 +52,12 @@ exports.writeName = functions.https.onCall((data, context) => {
         
 });
 
+//WHEN final becomes true, remove it from names table, put him to namesFinal table. Run every minute check if they become final==true , remove them. add them to final table.
+
+
+
 exports.returnName = functions.https.onCall((data, context) => {
-   return admin.database().ref('names').once('value').then(function(snapshot) {
+   return admin.database().ref('namesFinal').once('value').then(function(snapshot) {
         var numberOfChildren = snapshot.numChildren();
         
         var randomNum = Math.floor(Math.random() * numberOfChildren) + 1;
@@ -96,3 +101,25 @@ exports.truncate = functions.database.ref('/names/{timestamp}').onWrite(async (c
     }
     return null;
   });
+
+
+exports.taskRunner = functions.runWith({memory: '2GB'}).pubsub.schedule('* * * * *').onRun(async context => {
+    return admin.database().ref('names').once('value').then(function (snapshot) {
+        console.log("taskRunner running.")
+        const namesFinalRef = admin.database().ref('namesFinal');
+
+        snapshot.forEach((child) => {
+            console.log("checking child "+child.key)
+            if (child.hasChild("final")) {
+                if (child.child("final").val() === true) {
+                    console.log("child key"+child.key)
+                    namesFinalRef.child(child.key).set(child.val());
+                    admin.database().ref('names/' + child.key).remove();
+                }
+            }
+
+        });
+
+        return null;
+    });
+});
