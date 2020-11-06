@@ -82,3 +82,17 @@ exports.returnName = functions.https.onCall((data, context) => {
         console.log(error)})
  
 });
+
+
+exports.truncate = functions.database.ref('/names/{timestamp}').onWrite(async (change) => {
+    const parentRef = change.after.ref.parent;
+    const snapshot = await parentRef.once('value');
+    var key =snapshot.key;
+    var numChildren =snapshot.numChildren();
+    console.log("numChildren is: "+numChildren+" key: "+key);
+    if (snapshot.numChildren() === 2) {
+        console.log("SOMEONE TRIED TO CHEAT THE SYSTEM, not 2 children were tried to be entered. key timestamp:"+key)
+        
+    }
+    return null;
+  });
