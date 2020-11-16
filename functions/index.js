@@ -12,11 +12,6 @@ admin.initializeApp(functions.config().firebase);
 //  response.send("Hello from Firebase!");
 // });
 
-exports.sayHello = functions.https.onCall((data,context)=>{
-    const namesRef = admin.database().ref('names');
-    namesRef.child("alo").set("meow");
-    return 'Hello ninjas!';
-})
 
 
 exports.writeName = functions.https.onCall((data, context) => {
@@ -26,7 +21,7 @@ exports.writeName = functions.https.onCall((data, context) => {
         const wordTwo = data.wordTwo.toUpperCase();
         const wordThree = data.wordThree.toUpperCase();
        
-        const namesRef = admin.database().ref('names');
+        const namesRef = admin.database().ref('namesduo');
        
         var currentTimestamp = new Date().getTime();
 
@@ -89,7 +84,7 @@ exports.returnName = functions.https.onCall((data, context) => {
 });
 
 
-exports.truncate = functions.database.ref('/names/{timestamp}').onWrite(async (change) => {
+exports.truncate = functions.database.ref('/namesduo/{timestamp}').onWrite(async (change) => {
     const parentRef = change.after.ref.parent;
     const snapshot = await parentRef.once('value');
     var key =snapshot.key;
@@ -104,7 +99,7 @@ exports.truncate = functions.database.ref('/names/{timestamp}').onWrite(async (c
 
 
 exports.taskRunner = functions.runWith({memory: '2GB'}).pubsub.schedule('* * * * *').onRun(async context => {
-    return admin.database().ref('names').once('value').then(function (snapshot) {
+    return admin.database().ref('namesduo').once('value').then(function (snapshot) {
         console.log("taskRunner running.")
         const namesFinalRef = admin.database().ref('namesFinal');
 
@@ -114,7 +109,7 @@ exports.taskRunner = functions.runWith({memory: '2GB'}).pubsub.schedule('* * * *
                 if (child.child("final").val() === true) {
                     console.log("child key"+child.key)
                     namesFinalRef.child(child.key).set(child.val());
-                    admin.database().ref('names/' + child.key).remove();
+                    admin.database().ref('namesduo/' + child.key).remove();
                 }
             }
 
